@@ -1,0 +1,519 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+.container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.content {
+  max-width: 800px;
+  padding: 2rem;
+  text-align: center;
+}
+
+.back-button {
+  position: fixed;
+  top: 2rem;
+  left: 2rem;
+  background: #8B8B8B;
+  color: white;
+  border: 3px solid #6B6B6B;
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  font-family: copperplate, serif;
+  font-weight: 300;
+  font-style: normal;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  z-index: 1000;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.back-button:hover {
+  background: #A0A0A0;
+  border-color: #8B8B8B;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
+}
+
+.home-image {
+  position: absolute;
+  bottom: 0;
+  height: auto;
+  cursor: pointer;
+}
+
+.home-image.shield {
+  left: 5%;
+  bottom: 25%;
+  width: 25vw;
+}
+
+.home-image.staff {
+  left: 50%;
+  bottom: 10%;
+  transform: translateX(-50%);
+  width: 25vw;
+}
+
+.home-image.golem {
+  left: 60%;
+  bottom: 25%;
+  width: 35vw;
+}
+
+.design-scroll {
+  position: absolute;
+  height: 43vh;
+  width: auto;
+  cursor: pointer;
+  z-index: 10;
+}
+
+/* Top shelf scrolls */
+.design-scroll.scroll-1 {
+  left: 46%;
+  top: 4%;
+}
+
+.design-scroll.scroll-2 {
+  left: 64%;
+  top: 4%;
+}
+
+.design-scroll.scroll-3 {
+  left: 82%;
+  top: 4%;
+}
+
+/* Bottom shelf scrolls */
+.design-scroll.scroll-4 {
+  left: 46%;
+  top: 52.5%;
+}
+
+.design-scroll.scroll-5 {
+  left: 64%;
+  top: 52.5%;
+}
+
+.design-scroll.scroll-6 {
+  left: 82%;
+  top: 52.5%;
+}
+
+.design-shelf {
+  position: absolute;
+  right: 0;
+  top: 0;
+  height: 100vh;
+  width: auto;
+  z-index: 5;
+}
+
+.scroll-label {
+  position: absolute;
+  font-family: copperplate, serif;
+  font-size: 2.8rem;
+  font-weight: bold;
+  color: #2C2416;
+  z-index: 15;
+  pointer-events: none;
+  text-align: center;
+  width: 8vw;
+}
+
+.scroll-label.label-1 {
+  left: 50%;
+  top: 20%;
+}
+
+.scroll-label.label-2 {
+  left: 67%;
+  top: 22%;
+}
+
+.scroll-label.label-3 {
+  left: 85.5%;
+  top: 20.5%;
+}
+
+.scroll-label.label-4 {
+  left: 50%;
+  top: 71%;
+}
+
+.scroll-label.label-5 {
+  left: 68%;
+  top: 71%;
+}
+
+.scroll-label.label-6 {
+  left: 85.5%;
+  top: 69.5%;
+}
+
+.scroll-star {
+  position: absolute;
+  width: 2vw;
+  height: auto;
+  z-index: 15;
+  transform: translateX(-50%);
+}
+
+/* Stars above top shelf labels */
+.scroll-star.star-1-top {
+  left: 54.2%;
+  top: 13.5%;
+}
+
+.scroll-star.star-2-top {
+  left: 72.2%;
+  top: 15.5%;
+}
+
+.scroll-star.star-3-top {
+  left: 90.1%;
+  top: 13.5%;
+}
+
+/* Stars below top shelf labels */
+.scroll-star.star-1-bottom {
+  left: 54.2%;
+  top: 32%;
+}
+
+.scroll-star.star-2-bottom {
+  left: 72.2%;
+  top: 29%;
+}
+
+.scroll-star.star-3-bottom {
+  left: 90.1%;
+  top: 31%;
+}
+
+/* Stars above bottom shelf labels */
+.scroll-star.star-4-top {
+  left: 54.2%;
+  top: 64.5%;
+}
+
+.scroll-star.star-5-top {
+  left: 72.2%;
+  top: 64.5%;
+}
+
+.scroll-star.star-6-top {
+  left: 90.1%;
+  top: 63.8%;
+}
+
+/* Stars below bottom shelf labels */
+.scroll-star.star-4-bottom {
+  left: 54.2%;
+  top: 79%;
+}
+
+.scroll-star.star-5-bottom {
+  left: 72.2%;
+  top: 79%;
+}
+
+.scroll-star.star-6-bottom {
+  left: 90.1%;
+  top: 81.5%;
+}
+
+.info-scroll {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  height: 100vh;
+  width: auto;
+  z-index: 5;
+}
+
+.info-title {
+  position: absolute;
+  left: 50%;
+  top: 14%;
+  transform: translateX(-50%);
+  font-family: copperplate, serif;
+  font-size: 3rem;
+  font-weight: bold;
+  color: #2C2416;
+  z-index: 10;
+  text-align: center;
+}
+
+.info-text {
+  position: absolute;
+  left: 50%;
+  top: 20%;
+  transform: translateX(-50%);
+  width: 32vw;
+  font-family: 'garamond-atf-micro', 'Garamond', serif;
+  font-size: 1.5rem;
+  color: #2C2416;
+  z-index: 10;
+  text-align: left;
+  line-height: 1.6;
+}
+
+.merch-image {
+  position: absolute;
+  left: 40%;
+  top: 25%;
+  transform: translateX(-50%);
+  width: 11vw;
+  height: auto;
+  z-index: 10;
+  border: 3px solid #603913;
+}
+
+.merch-info {
+  position: absolute;
+  left: 47.5%;
+  top: 30%;
+  width: 18vw;
+  z-index: 10;
+}
+
+.merch-name {
+  font-family: copperplate, serif;
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #2C2416;
+  margin-bottom: 0.5rem;
+}
+
+.merch-description {
+  font-family: 'garamond-atf-micro', 'Garamond', serif;
+  font-size: 1rem;
+  color: #2C2416;
+  line-height: 1.4;
+  margin-bottom: 0.5rem;
+}
+
+.merch-price {
+  font-family: 'garamond-atf-micro', 'Garamond', serif;
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #2C2416;
+}
+
+.shirt-image {
+  position: absolute;
+  left: 40%;
+  top: 55%;
+  transform: translateX(-50%);
+  width: 11vw;
+  height: auto;
+  z-index: 10;
+  border: 3px solid #603913;
+}
+
+.shirt-info {
+  position: absolute;
+  left: 47.7%;
+  top: 62%;
+  width: 18vw;
+  z-index: 10;
+}
+
+.info-star-top {
+  position: absolute;
+  left: 50%;
+  top: 3%;
+  transform: translateX(-50%);
+  width: 3.5vw;
+  height: auto;
+  z-index: 10;
+}
+
+.info-star-bottom {
+  position: absolute;
+  left: 50%;
+  bottom: 3%;
+  transform: translateX(-50%);
+  width: 3.5vw;
+  height: auto;
+  z-index: 10;
+}
+
+.color-swatch {
+  position: absolute;
+  left: 35.5%;
+  transform: translateX(-50%);
+  width: 6vw;
+  height: auto;
+  z-index: 10;
+}
+
+.color-swatch.color-purple {
+  top: 25%;
+}
+
+.color-swatch.color-blue {
+  top: 48%;
+}
+
+.color-swatch.color-yellow {
+  top: 71%;
+}
+
+.color-text {
+  position: absolute;
+  left: 39.6%;
+  top: 22%;
+  width: 28vw;
+  font-family: 'garamond-atf-micro', 'Garamond', serif;
+  font-size: 1.2rem;
+  color: #2C2416;
+  z-index: 10;
+  text-align: left;
+  line-height: 1.6;
+}
+
+.big-scroll {
+  position: absolute;
+  right: -10vw;
+  top: 0;
+  height: 100vh;
+  width: auto;
+  z-index: 5;
+}
+
+.big-scroll.security-scroll {
+  right: -20vw;
+}
+
+.big-scroll.functionality-scroll {
+  right: -5vw;
+}
+
+.big-scroll-title {
+  position: absolute;
+  left: 50%;
+  top: 10%;
+  transform: translateX(-50%);
+  font-family: copperplate, serif;
+  font-size: 4rem;
+  font-weight: bold;
+  color: #2C2416;
+  z-index: 10;
+  text-align: center;
+}
+
+.big-scroll-text {
+  position: absolute;
+  left: 50%;
+  top: 25%;
+  transform: translateX(-50%);
+  width: 50vw;
+  font-family: 'garamond-atf-micro', 'Garamond', serif;
+  font-size: 1.5rem;
+  color: #2C2416;
+  z-index: 10;
+  column-count: 2;
+  column-gap: 3rem;
+  text-align: left;
+  line-height: 1.6;
+}
+
+.big-scroll-title.security-title {
+  left: auto;
+  transform: none;
+  right: 12vw;
+}
+
+.big-scroll-title.functionality-title {
+  left: auto;
+  transform: none;
+  right: 15vw;
+}
+
+.big-scroll-text.security-text {
+  left: auto;
+  transform: none;
+  right: 3vw;
+  width: 35vw;
+}
+
+.big-scroll-text.functionality-text {
+  left: auto;
+  transform: none;
+  right: 3.2vw;
+  width: 48vw;
+}
+
+.invisible-button {
+  position: absolute;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  z-index: 100;
+}
+
+.w-frame-button {
+  left: 28%;
+  top: 0%;
+  width: 13vw;
+  height: 32vh;
+}
+
+.logo-staff {
+  position: absolute;
+  left: 35%;
+  width: 6vw;
+  height: auto;
+  z-index: 10;
+  top: 25%;
+}
+
+.logo-shield {
+  position: absolute;
+  left: 35%;
+  width: 6vw;
+  height: auto;
+  z-index: 10;
+  top: 50%;
+}
+
+.logo-golem {
+  position: absolute;
+  left: 32.7%;
+  width: 9vw;
+  height: auto;
+  z-index: 10;
+  top: 69%;
+}
+
+.info-text.logo-text {
+  font-size: 1.1rem;
+  width: 24vw;
+  left: 54.5%;
+  top: 23%;
+}
